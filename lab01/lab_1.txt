@@ -1,0 +1,22 @@
+Tyler Poel, answers to questions from lab 1
+CS 344, Calvin University
+February 7, 2020
+
+Exercise 1.1:
+b.
+1. GPS is implemented as a function.
+2. The initial states, goal states, and operators are of the list types.
+3. It is recursive. The main GPS function calls on another function (the achieve_all function),
+    which itself calls on another function, and so forth.
+
+d.
+1. monkeys.py models the famous monkey and banana problem. The rules are defined with certain
+    constraints for the monkey: it knows how to move, carry things, reach for the bananas, and wave a stick
+    around in the air. I think the code has a pretty faithful implementation of the problem. It gives the intial,
+    goal, and possible actions clearly, and these states seem to reflect the original problem accurately.
+2.
+3. The GPS first looks for the given goal state within the "add-list" for given actions. If it can find the goal
+    state it tries to then achieve all the preconditions for that given action by looking through the "add-list"
+    of other operations to achieve those preconditions. If it can't achieve all of them it moves onto a different
+    action with the add-list goal state. If in the end it can't find any ways to achieve the goal state it
+    reports that fact.
