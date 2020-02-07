@@ -14,9 +14,16 @@ d.
     constraints for the monkey: it knows how to move, carry things, reach for the bananas, and wave a stick
     around in the air. I think the code has a pretty faithful implementation of the problem. It gives the intial,
     goal, and possible actions clearly, and these states seem to reflect the original problem accurately.
-2.
+2. Each domain action gives the actual action that is done, the preconditions needed to do that action, the
+    conditions that become true once the action is done, and then the conditions that are no longer true
+    because of the action.
 3. The GPS first looks for the given goal state within the "add-list" for given actions. If it can find the goal
     state it tries to then achieve all the preconditions for that given action by looking through the "add-list"
     of other operations to achieve those preconditions. If it can't achieve all of them it moves onto a different
     action with the add-list goal state. If in the end it can't find any ways to achieve the goal state it
     reports that fact.
+4. In a very strong sense of the word "artificial", yes, I think this code is artificially intelligent. This
+    seems to satisfy the definition of AI in the thinking logically category, as it attempts to rationally
+    walk through each step to reach a goal.
+5. Yes I think to some degree they would be. It's a situation the monkey has never seen before, but an
+    intelligent being can still figure out a new way to get the goal.
