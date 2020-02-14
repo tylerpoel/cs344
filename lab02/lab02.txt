@@ -1,0 +1,26 @@
+Exercise 2.1:
+Which of the local search algorithms solves the problem? How well does each algorithm do?
+- Both Hill-climbing and Simulated annealing solve the problem well, and after running the algorithms multiple times,
+    they consistently find the correct answer.
+Which algorithm works more quickly?
+- In this problem it's hard to tell, as it's a relatively easy problem, and both algorithms finish quickly.
+    However, theoretically Hill-climbing should be slightly faster.
+Does the starting value for x make any difference? Why or why not?
+- In this case no, it doesn't. I think that is because this problem only has the same local and global maximum,
+    and so no matter where the algorithm starts, it's fairly easy to find that max.
+What affect does changing the delta step value make on each algorithm? Why?
+- If the delta is made to be 2.0, and the initial is an even number, neither function can find the correct max,
+    as they can't make the steps reach 15, as it's an odd number. They'll report either 14 or 16, the closest
+    even numbers. When the delta is made to be very small (0.1 for example), the algorithms don't consistently work
+    again. Hill Climbing pretty much always finds it, consistently reporting 14.9999 repeating. Simulated annealing
+    however is all over the place. With such a small delta, hill climbing can still take the small steps in the right
+    direction, but annealing is taking such small jumps all around that it doesn't get anywhere.
+What is the purpose of the exp_schedule() method in the simulated annealing function call?
+- This is the "timer" that simulated annealing runs on. Has the time goes up, the "heat" goes down, and the
+    algorithm runs to its end. This exp_schedule() function is needed to tell simulated annealing how much time it
+    has, and the rate at which to "turn down the heat".
+
+
+Exercise 2.2:
+
+
