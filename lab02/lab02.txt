@@ -10,8 +10,8 @@ Does the starting value for x make any difference? Why or why not?
     and so no matter where the algorithm starts, it's fairly easy to find that max.
 What affect does changing the delta step value make on each algorithm? Why?
 - If the delta is made to be 2.0, and the initial is an even number, neither function can find the correct max,
-    as they can't make the steps reach 15, as it's an odd number. They'll report either 14 or 16, the closest
-    even numbers. When the delta is made to be very small (0.1 for example), the algorithms don't consistently work
+    as they can't make the steps reach 15, as it's an odd number. They'll report either 14, the closest even number
+    to the max. When the delta is made to be very small (0.1 for example), the algorithms don't consistently work
     again. Hill Climbing pretty much always finds it, consistently reporting 14.9999 repeating. Simulated annealing
     however is all over the place. With such a small delta, hill climbing can still take the small steps in the right
     direction, but annealing is taking such small jumps all around that it doesn't get anywhere.
@@ -22,5 +22,40 @@ What is the purpose of the exp_schedule() method in the simulated annealing func
 
 
 Exercise 2.2:
+How do each of the algorithms do on this problem space? Why?
+- Neither of them do very well. They don't consistently find the global max, in fact they rarely get close. I think
+    this is because of all the local maximums present in the problem space, which confuses the algorithms.
+Does the starting value make any difference here?
+- It doesn't make a difference for simulated annealing, as that algorithm randomly jumps around. However for hill
+    climbing it makes a big difference, as that algorithm tends to just get stuck in whatever local maximum it
+    starts in.
+Does modifying the step size (i.e., delta) affect the operation of the two algorithms? Why or why not?
+- Changing the delta one way or the other doesn't seem to make a huge affect, other than making the simulated
+    annealing's final answer closer to the starting value when the delta is small.
+What are the maximum and minimum possible values here, and how do the two algorithms score with respect to them?
+- The maximum value here is 30, and the minimum is 0. In terms of these, they never return the 0 value, but they
+    also don't frequently return the 30 value.
+
+Exercise 2.3:
+How does each algorithm do with these restarts? Why?
+- They both do well, but I think hill-climbing does slightly better. Since simulated annealing's algorithm is already
+    based on randomly jumping around, hill-climbing gains the most from random restarts.
+What are the average values of the runs for each of the algorithms?
+- For hill-climbing it frequently returns either 27 or 30, and for annealing it frequently returns 30.
+If one of the algorithms does better, explain why; if not, explain why not.
+- I think the simulated annealing does slightly better, because it already did better than hill-climbing, and so even
+    with the random restart addition it's able to perform better.
+
+Exercise 2.4:
+For which algorithm does beam search make the most sense?
+- It seems to make the most sense for hill-climbing, because it lacks the ability to get out of a local max.
+How many solutions could you maintain with reasonable space and time constraints?
+- It's hard to say, but probably a large amount, especially if you're deleting the previous states after using them.
+How would you modify the code to implement beam search? How is it different from random restarts, if at all?
+- I would have to add some parallel capabilities to the code, and use multi-threading to make it really effective.
+    From there I would generate k random states, assign a state to each thread, and have each thread run the search
+    algorithm on its different state. It's different from random restarts, as this is done in parallel, and random
+    restarts is done sequentially. In this case the threads also give useful information to each other, allowing the
+    algorithm to stop pursuing bad paths, and help where the most progress is being made.
 
 

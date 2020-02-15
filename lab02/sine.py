@@ -15,7 +15,7 @@ from random import randrange
 import math
 
 
-class SinVariant(Problem):
+class SineVariant(Problem):
     """
     State: x value for the sine function variant f(x)
     Move: a new x value delta steps from the current x (in both directions) 
@@ -38,18 +38,30 @@ class SinVariant(Problem):
 
 if __name__ == '__main__':
 
-    # Formulate a problem with a 2D hill function and a single maximum value.
+    # Formulate a problem with a 2D sine function and a single maximum value.
     maximum = 30
     initial = randrange(0, maximum)
-    p = SinVariant(initial, maximum, delta=1.0)
+    p = SineVariant(initial, maximum, delta=1.0)
     print('Initial                      x: ' + str(p.initial)
           + '\t\tvalue: ' + str(p.value(initial))
           )
 
-    # Solve the problem using hill-climbing.
+    # Solve the problem using hill-climbing, with random restarts
     hill_solution = hill_climbing(p)
-    print('Hill-climbing solution       x: ' + str(hill_solution)
-          + '\tvalue: ' + str(p.value(hill_solution))
+
+    # simulates 20 random restarts
+    best_val = 0
+    best_x = 0
+    for x in range(0, 20):
+        initial = randrange(0, maximum)
+        p = SineVariant(initial, maximum, delta=1.0)
+        hill_solution = hill_climbing(p)
+        if p.value(hill_solution) > best_val:
+            best_val = p.value(hill_solution)
+            best_x = hill_solution
+
+    print('Hill-climbing solution       x: ' + str(best_x)
+          + '\tvalue: ' + str(best_val)
           )
 
     # Solve the problem using simulated annealing.
@@ -57,6 +69,21 @@ if __name__ == '__main__':
         p,
         exp_schedule(k=20, lam=0.005, limit=1000)
     )
-    print('Simulated annealing solution x: ' + str(annealing_solution)
-          + '\tvalue: ' + str(p.value(annealing_solution))
+
+    # simulates 20 random restarts
+    best_val = 0
+    best_x = 0
+    for x in range(0, 20):
+        initial = randrange(0, maximum)
+        p = SineVariant(initial, maximum, delta=1.0)
+        annealing_solution = simulated_annealing(
+            p,
+            exp_schedule(k=20, lam=0.005, limit=1000)
+        )
+        if p.value(annealing_solution) > best_val:
+            best_val = p.value(annealing_solution)
+            best_x = annealing_solution
+
+    print('Simulated annealing solution x: ' + str(best_x)
+          + '\tvalue: ' + str(best_val)
           )
