@@ -62,3 +62,4 @@ b.  In traditional search the heuristic is used to determine the cost of taking 
     state2, and generally the action that costs the least amount will be taken. This is especially applicable in
     map/destination problems. In CSP there doesn't really seem to be an equivalent of the heuristic. As long as
     all the variables are assigned without constraints, CSP seems to be satisfied.
+
