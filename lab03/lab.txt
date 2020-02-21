@@ -45,4 +45,20 @@ c.  At the most, min-conflict will only as many moves as columns it has: one mov
 
 
 Exercise 3.3:
-a.
+a.  Both CSP and traditional search seem to use states in the same way: as different possible representations of the
+    problem space. There are different actions that can be made to get from one state to another. However the
+    traditional search defines both a initial state and a goal state in its __init__ function, however CSP doesn't do
+    this set up at all. In fact, CSP only really uses states for tree and graph-search interfaces. Actions are a bit
+    different as well. In traditional search they're seen as a way to get from one state to the next. In CSP however
+    actions are viewed more as assignments to different variables. In a way it's the same thing, just a different way
+    of thinking about it. Traditional search doesn't explicitly include domains either, while it's an essential part
+    of CSP. The result method is effectively the same for both implementations. The goal test is very different
+    between the two. In traditional search it's simply "Have we reached the goal state that was specified at the
+    beginning?". It's a very simple comparison. In CSP the idea of a goal is a little bit different, as that makes
+    sure that all the variables have been assigned without any conflicts.
+
+b.  In traditional search the heuristic is used to determine the cost of taking a path. In the end one wants a path
+    to the solution that cost the least amount. The heuristic estimates the cost of an action going from state1 to
+    state2, and generally the action that costs the least amount will be taken. This is especially applicable in
+    map/destination problems. In CSP there doesn't really seem to be an equivalent of the heuristic. As long as
+    all the variables are assigned without constraints, CSP seems to be satisfied.
