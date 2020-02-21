@@ -2,7 +2,25 @@ Answers to lab03 for CS 344
 Tyler Poel on February 21, 2020
 
 Exercise 3.1:
-a. depth-first search is very slow, doesn't even find a solution
-    back tracking takes awhile, but eventually gets there
-    AC3 is incredibly fast
-    min_conflicts fails
+a.  On the easiest puzzle AC-3 was the fastest by far, and successfully solved the problem. Backtracking took awhile,
+    but did eventually find a solution. Both Depth-first search and Min-conflicts didn't find a solution at all.
+    Depth-first search doesn't find a solution as it just goes down one branch, and to find the solution would need
+    to visit almost every possible board, even incorrect ones, and this takes way too much time. Min-conflicts is
+    essentially just hill climbing, and likely gets stuck in a local max, instead of finding the global one.
+    Backtracking is effectively a smarter depth-first search, and backtracks when it can't make any more legal moves.
+    As this approach takes some time, since the search space is relatively small it does produce a solution. AC-3 is
+    the fastest as it does a really good job of satisfying the constraints in an efficient manner. Neither AC-3 or
+    backtracking were able to solve the harder_aima or hardest_escargot Sudoku problems. I think that as the problems
+    got harder, the search space simply was too big for either algorithm to effectively solve.
+
+b.  Both of these settings should work well for sudoku. Before implementing them I thought that using the minimum-
+    remianing-values would be the most effective, as it does what seems to be an intuitive and natural action for me
+    when I think of how I would solve the problem. However forward-checking actually seemed to be slightly more
+    effective, as when run on the same problem, the forward-checking algorithm completed it faster. Together though,
+    both of these settings were very effective, as implementing them together solved the harder and hardest sudoku
+    problems in a very short amount of time.
+
+
+Exercise 3.2:
+a.  AC-3 fails at every n value, even 1 n.
+    Back-tracking gets up to 25
