@@ -14,7 +14,7 @@ a.  On the easiest puzzle AC-3 was the fastest by far, and successfully solved t
     got harder, the search space simply was too big for either algorithm to effectively solve.
 
 b.  Both of these settings should work well for sudoku. Before implementing them I thought that using the minimum-
-    remianing-values would be the most effective, as it does what seems to be an intuitive and natural action for me
+    remaining-values would be the most effective, as it does what seems to be an intuitive and natural action for me
     when I think of how I would solve the problem. However forward-checking actually seemed to be slightly more
     effective, as when run on the same problem, the forward-checking algorithm completed it faster. Together though,
     both of these settings were very effective, as implementing them together solved the harder and hardest sudoku
@@ -22,5 +22,27 @@ b.  Both of these settings should work well for sudoku. Before implementing them
 
 
 Exercise 3.2:
-a.  AC-3 fails at every n value, even 1 n.
-    Back-tracking gets up to 25
+a.  AC-3 fails at every n value, even 1 n. I think this is due to how AC-3 tries to do all the pruning before hand, but
+    for a problem like n-queens this approach doesn't work, simply because the board can be set up in multiple ways.
+    Back-tracking gets up to 27, but for some reason fails at 2 and 3. I can't figure out why it fails at the lower
+    numbers, but I do think its cap of 27 is simply that the problem space gets too large, and the algorithm takes too
+    long.
+    I tested Min-conflicts all the way up to 5500, and it was still solving the problem. It was taking a decent amount
+    of time, which is why I stopped testing it, but I believe it could go even further if it was allowed to run the
+    problem longer. Min-conflicts seems to work well here because it's algorithm actively works at exactly what the
+    n-queens problem is: making sure there's no queen that can attack another queen. By being able to move queens
+    around in their column to minimize conflicts it performs a very effective way to solve this problem, instead of
+    just searching for solutions.
+
+b.  Again, backtracking with MRV and forward-checking work the best. This ensures that set-ups where moving a queen
+    will add another conflict are pruned, and that certain queens that have to be in certain positions are tried first.
+    It's a much smarter way to implement backtracking, and greatly increases the effectiveness fo the algorithm. With
+    these settings I was able to see backtracking solve problems up to size n=160.
+
+c.  At the most, min-conflict will only as many moves as columns it has: one move to move one queen per column. However,
+    since the board is randomly chosen at the beginning, it's likely that fewer moves will be needed. The book reports
+    that on a million-queen problem the algorithm still only needed 50 moves!
+
+
+Exercise 3.3:
+a.
