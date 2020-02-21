@@ -1,0 +1,8 @@
+Answers to lab03 for CS 344
+Tyler Poel on February 21, 2020
+
+Exercise 3.1:
+a. depth-first search is very slow, doesn't even find a solution
+    back tracking takes awhile, but eventually gets there
+    AC3 is incredibly fast
+    min_conflicts fails
