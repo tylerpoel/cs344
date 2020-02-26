@@ -1,5 +1,5 @@
 """
-This implements a travelling-sales person problem, which is solved using local search,
+This implements a travelling salesperson problem, which is solved using local search,
     with both AIMA hill-climbing and simulated annealing
 
 Created by: Tyler Poel, for CS344, Homework01, at Calvin University
@@ -11,11 +11,9 @@ import itertools
 import math
 
 TSP_world = UndirectedGraph(dict(
-    Boston=dict(NewYork=10, LA=3, GrandRapids=2),
-    NewYork=dict(LA=7, Chicago=5),
-    Chicago=dict(LA=12, Detroit=4),
-    Detroit=dict(LA=15, GrandRapids=7),
-    GrandRapids=dict(LA=5)))
+    A=dict(B=1, C=7, D=3),
+    B=dict(C=5, D=2),
+    C=dict(D=8)))
 
 
 class TSP(Problem):
@@ -42,6 +40,8 @@ class TSP(Problem):
         new_state = state[:]
         new_state.append(action[0])
 
+    def value(self, state):
+        """ header """
 
 
 
