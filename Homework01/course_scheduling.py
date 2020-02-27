@@ -18,14 +18,9 @@ def schedule():
     for course in classes:
         domains[course] = [faculty, times, rooms]
 
-    # neighbors = parse_neighbors("""cs108: cs344;
-    #             cs374: cs112""")
-
     neighbors = {}
     for course in classes:
-        for A in classes:
-            if A != course:
-                neighbors[course].append(A)
+        neighbors[course] = classes
 
     def schedule_constraint(A, a, B, b):
 
