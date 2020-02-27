@@ -100,7 +100,7 @@ class TSP(Problem):
 
 if __name__ == '__main__':
     # Initial route for very simple tsp world
-    tsp_route = ['D', 'C', 'A', 'B','F', 'D']
+    tsp_route = ['D', 'C', 'A', 'B','F', 'E', 'D']
 
     # Initial route for more complicated romania world
     interconnect(romania)
