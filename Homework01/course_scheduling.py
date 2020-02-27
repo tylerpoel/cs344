@@ -4,7 +4,7 @@ Created by: Tyler Poel, for CS344, Homework01, at Calvin University
 Date: February 27, 2020
 """
 
-from csp import min_conflicts, backtracking_search, AC3, parse_neighbors
+from csp import CSP,  min_conflicts, backtracking_search, AC3, parse_neighbors
 from search import depth_first_graph_search
 
 def schedule():
@@ -23,9 +23,33 @@ def schedule():
         neighbors[course] = classes
 
     def schedule_constraint(A, a, B, b):
+        if A == 'cs108' and a != 'Vanderlinden':
+            return False
+        if B == 'cs108' and b != 'Vanderlinden':
+            return False
+        if A == 'cs344' and a != 'Vanderlinden':
+            return False
+        if B == 'cs344' and b != 'Vanderlinden':
+            return False
+        if A == 'cs374' and a != 'Adams':
+            return False
+        if B == 'cs374' and b != 'Adams':
+            return False
+        if A == 'cs112' and a != 'Adams':
+            return False
+        if B == 'cs112' and b != 'Adams':
+            return False
+        if A == 'cs212' and a != 'Plantinga':
+            return False
+        if B == 'cs212' and b != 'Plantinga':
+            return False
+        if A == 'cs214' and a != 'Schuurman':
+            return False
+        if B == 'cs214' and b != 'Schuurman':
+            return False
 
-        return 0
 
+    return CSP(classes, domains, neighbors, schedule_constraint)
 
 
 if __name__ == '__main__':
