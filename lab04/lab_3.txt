@@ -1,0 +1,13 @@
+Answers to Exercise 4.3 in lab04, for CS 344 at Calvin University
+Tyler Poel, February 28, 2020
+
+a.  i. P(User)
+        = P(User = true) = 0.089
+        and P(User = false) = 1 - 0.089 = 0.91
+        => P(User) = <0.089, 0.91>
+    ii. P(test | user) = 0.99
+    iii. P(¬test | user) = 1 - 0.99 = 0.01
+    iv.  P(test | ¬user)
+          = 1 - P(¬test | ¬user)
+          = 1 - 0.98 = 0.02
+    v. P(User | test)
