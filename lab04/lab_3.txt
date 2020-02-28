@@ -11,3 +11,15 @@ a.  i. P(User)
           = 1 - P(¬test | ¬user)
           = 1 - 0.98 = 0.02
     v. P(User | test)
+        = α<P(user ^ test), P(¬user ^ test)>
+        = α<0.99, 0.02>
+        = < 0.99 / (0.99+0.02), 0.02 / (0.99+0.02) >
+        = <0.98, 0.0198>, α = 1.01
+
+b.  P(Cancer | +test)
+        = α<P(cancer ^ +test), P(¬cancer ^ +test)>
+        = α< 0.8, 0.096 >
+        = <0.8/(0.8+0.096), 0.096/(0.8+0.096)>
+        = < 0.89, 0.108 >, α = 0.896
+        Chance she does have cancer is 0.89
+        Chance she doesn't have cancer is 0.108
