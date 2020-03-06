@@ -1,5 +1,6 @@
 '''
-This implements a Bayesian network that represents a happiness domain
+This implements a Bayesian network that represents a happiness domain.
+This answers questions to 5.3 in lab05 for CS 344
 
 Created by: Tyler Poel, for lab05 in CS 344 at Calvin University
 Date: March 6, 2020
@@ -20,6 +21,17 @@ happiness = BayesNet([
 print("5.3 ai: \t" + enumeration_ask('Raise', dict(Sunny=T), happiness).show_approx())
 # P(Raise | happy ^ sunny)
 print("5.3 aii:\t" + enumeration_ask('Raise', dict(Sunny=T, Happy=T), happiness).show_approx())
+'''
+Hand Calculations:
+5.3 ai.
+    P(Raise | Sunny) - confounding variable Happy
+    = α Σ P( R, S, H)
+    = α Σ P(R) * P(S) * P(H | R, S)
+    = α < P(R) * P(S) * (P(H) + P(not H)), P(not R) * P(S) * (P(H) + P(not H)) >
+    = α <0.007, 0.093>
+    = <0.01, 0.99>
+    
+'''
 
 # P(Raise | happy)
 print("5.3 bi: \t" + enumeration_ask('Raise', dict(Happy=T), happiness).show_approx())
