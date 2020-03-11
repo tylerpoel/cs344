@@ -34,6 +34,30 @@ def spam_probability(token, good, bad, ngood, nbad):
         return 0
 
 
+def build_probability_table(good, bad, ngood, nbad):
+    """Builds the probability table for each token from the bad and good corpuses"""
+    probs_table = {}
+    for word in good:
+        probs_table.update({word: spam_probability(word, good, bad, ngood, nbad)})
+    for word in bad:
+        if word not in probs_table:
+            probs_table.update({word: spam_probability(word, good, bad, ngood, nbad)})
+    return probs_table
+
+
+def new_mail_probability(mail, probs_table):
+    """Given an email and the probabilities of each token, calculates the probability the individual email is spam."""
+    prod = 1
+    complements = 1
+    # finds product of all the elements, and complements of the elements
+    for token in mail:
+        prob = probs_table.get(token.lower())
+        prod *= prob
+        complements *= (1 - prob)
+
+    return prod / (prod + complements)
+
+
 if __name__ == '__main__':
     spam_corpus = [["I", "am", "spam", "spam", "I", "am"], ["I", "do", "not", "like", "that", "spamiam"]]
     ham_corpus = [["do", "i", "like", "green", "eggs", "and", "ham"], ["i", "do"]]
@@ -48,11 +72,15 @@ if __name__ == '__main__':
     print(spam)
     print(ham)
 
-    probabilities = {}
-    for word in ham:
-        probabilities.update({word: spam_probability(word, ham, spam, ngood, nbad)})
-    for word in spam:
-        if word not in probabilities:
-            probabilities.update({word: spam_probability(word, ham, spam, ngood, nbad)})
+    probabilities = build_probability_table(ham, spam, ngood, nbad)
 
     print(probabilities)
+
+    spam_prob = new_mail_probability(spam_corpus[0], probabilities)
+    print("spam_corpus[0]: " + str(spam_prob))
+    spam_prob = new_mail_probability(spam_corpus[1], probabilities)
+    print("spam_corpus[1]: " + str(spam_prob))
+    spam_prob = new_mail_probability(ham_corpus[0], probabilities)
+    print("ham_corpus[0]: " + str(spam_prob))
+    spam_prob = new_mail_probability(ham_corpus[1], probabilities)
+    print("ham_corpus[1]: " + str(spam_prob))
