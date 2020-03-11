@@ -25,7 +25,7 @@ print('P(Cloudy): ' + enumeration_ask('Cloudy', dict(), weather).show_approx())
 print('P(Sprinkler | cloudy): ' + enumeration_ask('Sprinkler', dict(Cloudy=T), weather).show_approx())
 
 # P(Cloudy| the sprinkler is running and it’s not raining)
-print('P(Cloudy | ¬sprinkler ^ ¬rain): ' + enumeration_ask('Cloudy', dict(Sprinkler=F, Rain=F), weather).show_approx())
+print('P(Cloudy | sprinkler ^ ¬rain): ' + enumeration_ask('Cloudy', dict(Sprinkler=T, Rain=F), weather).show_approx())
 
 # P(WetGrass | it’s cloudy, the sprinkler is running and it’s raining)
 print('P(WetGrass | cloudy ^ sprinkler ^ rain): ' + enumeration_ask('WetGrass', dict(Cloudy=T, Sprinkler=T, Rain=T),
