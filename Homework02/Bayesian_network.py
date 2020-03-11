@@ -17,6 +17,7 @@ weather = BayesNet([
     ('WetGrass', 'Sprinkler Rain', {(T, T): 0.99, (T, F): 0.9, (F, T): 0.9, (F, F): 0.0})
 ])
 
+
 # P(Cloudy)
 print('P(Cloudy): ' + enumeration_ask('Cloudy', dict(), weather).show_approx())
 
