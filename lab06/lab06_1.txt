@@ -1,0 +1,7 @@
+The information gain from the "Hungry?" question from the restaurant domain is 0.196.
+This is found by subtracting the entropy of the domain by the remainder of the question:
+Gain(A) = Entropy(V) - Remainder(A)
+Remainder(A) = 7/12 * Entropy('Yes') + 5/12 * Entropy('No')
+= 7/12 * -(5/7 * lg(5/7) + 2/7 * lg(2/7)) + 5/12 * -(1/5 * lg(1/5) + 4/5 * lg(4/5))
+=0.804
+Therefore the gain is 1 - 0.804 = 0.196.
