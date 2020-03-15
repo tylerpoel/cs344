@@ -1,3 +1,8 @@
+For lab06 in CS 344 at Calvin University
+By: Tyler Poel
+Date: March 13, 2020
+
+Exercise 6.1:
 The information gain from the "Hungry?" question from the restaurant domain is 0.196.
 This is found by subtracting the entropy of the domain by the remainder of the question:
 Gain(A) = Entropy(V) - Remainder(A)

@@ -1,0 +1,46 @@
+For lab06 in CS 344 at Calvin University
+By: Tyler Poel
+Date: March 13, 2020
+
+Exercise 6.2:
+Using the example of identifying whether an email in Gmail is “important” or not.
+
+Exercise 1:
+We want the machine learned model to correctly identify and mark "important" emails.
+
+Exercise 2:
+Our ideal outcome is that only truly "important" emails are marked as such, and that other emails do not
+receive any marking.
+
+Exercise 3:
+A success metric is the number of emails correctly labeled as important or not.
+Our key results (KR) for the success metrics are a percentage of correctly labeled emails above 95%.
+Our ML model is deemed a failure if our "important" labeling is no better than randomly guessing.
+
+Exercise 4:
+The output from our ML model will be emails either labeled as important or not labeled.
+The output is defined as a classification problem that picks the label "important", or not.
+
+Exercise 5:
+The output from the ML model will be made when a new email is received.
+The outcome will be used for putting a visual marking on an email that shows it's been marked as "important."
+
+Exercise 6:
+If we didn't us ML we would have to write a program that searched for specific words or phrases in the email
+to decide if it was important or not.
+
+Exercise 7:
+Our problem is best framed as a Binary classification which predicts if an email is important or not.
+This problem is already a simpler binary classification problem.
+
+Exercise 8:
+Each "row" is an email. The different inputs can be a list containing all the words in the email and the length of
+the email.The output for one piece of data (a single email) is if the email is important or not.
+
+Exercise 9:
+The inputs come from the individual emails, by breaking up the emails into the individual words it contains, and then
+also keeping track of how long each email is.
+
+Exercise 10:
+I think the list of words in the email would be the easiest and most helpful input to obtain. The types of words and
+language used in an "important" email could be very indicative of what type of email it is.
