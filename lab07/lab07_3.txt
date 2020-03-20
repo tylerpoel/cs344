@@ -1,0 +1,48 @@
+For lab07 in CS344 at Calvin University
+Created by: Tyler Poel
+Date: March 20, 2020
+
+Exercise 7.3:
+a) Task 1:
+    california_housing_dataframe["rooms_per_person"] = (
+        california_housing_dataframe['total_rooms'] / california_housing_dataframe['population'])
+
+    calibration_data = train_model(
+        learning_rate=0.05,
+        steps=500,
+        batch_size=5,
+        input_feature="rooms_per_person"
+    )
+    This gave a RMSE of 131.82
+
+   Task 2:
+    plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+    plt.subplot(1, 2, 2)
+    _ = california_housing_dataframe["rooms_per_person"].hist()
+
+    The scatter plot shows most of the predictions follow an almost straight line on very left of the plot. There are
+    a few points not near the line, and the histogram shows us that is because we have some outliers in our data.
+
+   Task 3:
+    california_housing_dataframe['clipped_rooms_per_person'] = california_housing_dataframe['rooms_per_person'].apply(lambda x: min(x, 5))
+    california_housing_dataframe["clipped_rooms_per_person"].hist()
+
+    calibration_data = train_model(
+        learning_rate=0.05,
+        steps=500,
+        batch_size=5,
+        input_feature="clipped_rooms_per_person")
+
+    plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+
+    With the clipped outliers this gives a RMSE of 108.51
+
+
+
+b) Synthetic features are helpful for when we want to train on a feature that isn't explicitly in the data,
+but can be found by manipulating other columns in the data. It lets us ask different questions that the unaltered
+original data could not on its own.
+
+c) Outliers are values that don't follow the trend of the majority of the data. On a scatter plot they're far away
+from any other data point. Typically they are dropped, or "clipped", so that their presence doesn't affect the outcome
+of a regression model.
