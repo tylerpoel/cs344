@@ -1,0 +1,24 @@
+For lab07 in CS344 at Calvin University
+Created by: Tyler Poel
+Date: March 20, 2020
+
+Exercise 7.2:
+a) Categorical data is data that is textual. Numerical data on the other hand is data that deals with numbers, and is
+specifically data you want to treat as a number. Categorical data can be numbers as well, but in that case it's not
+numbers that you'd want to do numerical operations with (ex. Zip Codes).
+
+b) Task 1:
+    train_model( learning_rate=0.0001, steps=100, batch_size=1000)
+    This gave me a RSME of 166.39
+
+   Task 2:
+   train_model(
+    learning_rate=0.0003,
+    steps=800,
+    batch_size=10,
+    input_feature='population'
+    )
+    This gave me a RSME of 180.09. I had a hard time getting below 180.
+
+c) Shuffling data allows it to be passed to a model randomly during training, which is important for making the model
+generalized.

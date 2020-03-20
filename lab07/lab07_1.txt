@@ -1,0 +1,19 @@
+For lab07 in CS344 at Calvin University
+Created by: Tyler Poel
+Date: March 20, 2020
+
+Exercise 7.1:
+a) Solutions to pandas exercises 1 & 2:
+Exercise 1 solution:
+cities["Big and saint"] = (cities['City name'].apply(lambda name: 'San' in name)) & (cities['Area square miles'] > 50)
+
+Exercise 2 solution:
+cities.reindex([20, 100, 5]) returns a tables with all NaN values, showing rows with missing values. Adding new rows
+like this with missing values is good because it allows for easy merging with other data sets.
+
+b) Pandas just seems like it has a lot more breadth of what it can do in terms of data manipulation. Helpful tools
+like reading in CSV files into data frames, and easily creating new columns for those data frames are features that
+are easy to use but also very powerful.
+
+c) Reordering is a great way to shuffle/randomize a data frame. This could be very helpful for creating good
+training/testing data sets.
