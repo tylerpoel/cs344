@@ -1,0 +1,21 @@
+For lab08 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 3, 2020
+
+Exercise 8.2
+
+a.
+The Pearson correlation coefficient measures correlation. In this example correlation is between a feature and its
+target, and a feature compared to other features.
+
+In this example, the correlation between median_income and the target had a correlation of 0.7. This makes sense to me,
+as income level seems like a good indicator of the value of the house that person would/can buy.
+
+b.
+Task 1:
+I chose "median_income", "rooms_per_person", and "longitude" to be my features.
+
+With:
+learning_rate=0.001, steps=600, batch_size=5, I got a RMSE of 115.13.
+
+Task 2:

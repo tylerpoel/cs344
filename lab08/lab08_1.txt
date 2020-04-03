@@ -1,0 +1,81 @@
+For lab08 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 3, 2020
+
+Exercise 8.1
+
+a.
+Task 1:
+The median income values don't seem to be literal household incomes. The median values is 4.1, which doesn't make much
+sense. The scale ranges from 0.5 to 15, and it's not exactly clear how the scale works.
+The largest rooms per person is is 18.3, which seems like an unrealistically high number.
+
+Task 2:
+The validation and training sets don't have any intersecting areas of houses. The two sets split the houses at around
+the -122 longitude mark, seeming to suggest that the validation set only covers east of that line, and the training set
+only covers west of that line. . This shows that the split didn't evenly distribute houses between the two sets, as it
+should have. This is also seen in the fact that distributions for a given feature between the validation and the
+training set aren't very similar.
+
+Task 3:
+The data wasn't randomized when the two sets were made. Uncommenting california_housing_dataframe.reindex(
+np.random.permutation(california_housing_dataframe.index)) fixes this problem, and makes the training and
+validation more similar, and the plots both roughly show the shape of California.
+
+Task 4:
+# 1. Create input functions.
+  training_input_fn = lambda: my_input_fn(
+      training_examples,
+      training_targets,
+      batch_size = batch_size)
+  predict_training_input_fn = lambda: my_input_fn(
+      training_examples,
+      training_targets,
+      num_epochs=1,
+      shuffle=False)
+  predict_validation_input_fn = lambda: my_input_fn(
+      validation_examples,
+      validation_targets,
+      num_epochs=1,
+      shuffle=False)
+
+
+# 2. Take a break and compute predictions.
+    training_predictions = linear_regressor.predict(predict_training_input_fn)
+    training_predictions = np.array([item['predictions'][0] for item in training_predictions])
+
+    validation_predictions = linear_regressor.predict(predict_validation_input_fn)
+    validation_predictions = np.array([item['predictions'][0] for item in validation_predictions])
+
+With the inputs of:
+learning_rate=0.00003,
+steps=400,
+batch_size=4,
+I got a RMSE of 165.86
+
+Task 5:
+test_examples = preprocess_features(california_housing_test_data)
+test_targets = preprocess_targets(california_housing_test_data)
+
+predict_test_input_fn = lambda: my_input_fn(
+    test_examples,
+    test_targets,
+    shuffle = False,
+    num_epochs = 1
+)
+
+test_predictions = linear_regressor.predict(predict_test_input_fn)
+test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+print(math.sqrt(metrics.mean_squared_error(test_predictions, test_targets)))
+
+This gave a RMSE of 160.76.
+
+The test data did just about as well as the validation data (in fact it even did a little bit better). This shows that
+we haven't overfit our model on our training data, and it's more generalized, because it did well on both the validation
+set and the test set.
+
+b.
+I learned how a adding a validation set to the standard sets of training and testing can be very helpful. It helps us
+make sure that our model is generalized. I also learned that in the right circumstances it's very important to shuffle
+your data before you split it into different sets, as un-shuffled data can lead to bias.
