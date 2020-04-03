@@ -1,0 +1,41 @@
+For lab08 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 3, 2020
+
+Exercise 8.3
+
+a.
+FTRL scales the learning rate differently for different coefficients, depending on what will work best for each
+particular coefficient.
+
+b.
+The current API for feature columns only supports discrete features for crosses. Therefore buckets can be used to
+cross continuous features.
+
+c.
+Task 1:
+bucketized_latitude = tf.feature_column.bucketized_column(
+  latitude, boundaries=get_quantile_based_boundaries(
+  training_examples["latitude"], 10))
+
+bucketized_housing_median_age = tf.feature_column.bucketized_column(
+  housing_median_age, boundaries=get_quantile_based_boundaries(
+  training_examples["housing_median_age"], 10))
+
+bucketized_median_income = tf.feature_column.bucketized_column(
+  median_income, boundaries=get_quantile_based_boundaries(
+  training_examples["median_income"], 10))
+
+bucketized_rooms_per_person = tf.feature_column.bucketized_column(
+  rooms_per_person, boundaries=get_quantile_based_boundaries(
+  training_examples["rooms_per_person"], 10))
+
+With a learning_rate=1.0, steps=500, and batch_size=100, the RMSE was 89.01.
+It didn't make much sense to me as to why we bucketized all the features we did in this Task. We've used these
+features before normally, and haven't had any issues with it. The process of bucketizing does make sense though.
+
+Task 2:
+long_x_lat = tf.feature_column.crossed_column([bucketized_latitude, bucketized_longitude], 1000)
+With a learning_rate=1.0, steps=500, and batch_size=100, the RMSE was 79.6.
+A unique cross could be crossing households and median_income. This could be useful as it can show the density of
+people with certain incomes at specific areas.

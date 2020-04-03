@@ -19,4 +19,7 @@ With:
 learning_rate=0.001, steps=600, batch_size=5, I got a RMSE of 115.13.
 
 Task 2:
+For my synthetic feature I did a bin for each latitude range (32-33, 33-34, etc.)
+Using a learning_rate=0.05, steps=400, and batch_size=2, my final RMSE was 84.37. This beats the google provided
+baseline.
 

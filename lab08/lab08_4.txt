@@ -1,0 +1,27 @@
+For lab08 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 3, 2020
+
+Exercise 8.4
+
+a.
+With a small dataset, creating a validation set isn't practical, as it wold be very small. K-folds allows us to still
+create a validation set out of our training set, by separating the training set into 4 or 5 partitions, creating the
+same number of models, and then training each model on K-1 partitions, and evaluating on the remaining one. The
+validation score is the average of all the models.
+
+b.
+If the values have wildly different ranges the model will incorrectly consider some features to be more important than
+others.
+
+c.
+This makes intuitive sense to me. A smaller dataset may have less feature, or simply less data, and so a simpler
+network will be better suited for this, rather than a large and complicated one that might be a little bit overkill,
+and will possibly over-fit.
+
+d.
+Changing the architecture didn't improve the model. Subtracting layers didn't help, as it stunted the power of the
+network, while adding layers starts to over-fit. The same philosophy holds for making the layers wider or narrower.
+
+
+
