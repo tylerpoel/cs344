@@ -1,0 +1,10 @@
+For lab 09 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 8, 2020
+
+Exercise 9.3:
+
+I did all of the suggested further experiments. Nothing had a significant effect. Changing the number of hidden units
+from 16 to 8 bumped up the accuracy slightly to 88, but otherwise all the other changes were right around 88, which
+is where the original architecture came in. I think to make any significant improvements on this architecture a lot
+more nuanced or dramatic methods than changing features slightly would have to be implemented.
