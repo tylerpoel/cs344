@@ -1,0 +1,16 @@
+For lab 09 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 8, 2020
+
+Exercise 9.2:
+
+a. Sparsity describes a model where only a small number of coefficients are non-zero. This is the optimal goal of
+regularization, as it makes the model much less complex.
+
+b. L1 regularization increases sparsity by driving weights to exactly zero, opposed to L2 regularization which
+encourages weights to be small, but doesn't drive them to zero. L1 does this by penalizing the absolute value of
+a weight, not it's square (like L2). L2 subtracts some constant from a weight every time, which eventually can drive it
+to zero. L2 only takes away a percent of a weight every time, which only makes the weight smaller, not zero.
+
+c. I got a RMSE of 25 and a model complexity of 593. My hyperparameters were learning_rate=0.1,
+regularization_strength=0.7, steps=300, and batch_size=100,

@@ -1,0 +1,19 @@
+For lab 09 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 8, 2020
+
+Exercise 9.1:
+
+a. Not very well. Linear Regressions loss function, L2 Loss, doesn't do well with classification, especially when
+the output is given as a probability. There isn't a huge penalty for misclassifications. The regression graph
+is also jumps all over the place, showing it to not be a great predictor.
+
+b. LogLoss penalizes misclassificaions much more heavily than L2 Loss. If a negative example is classified as
+positive with a probability of 0.9 vs 0.99999 L2 Loss doesn't really distinguish between these two, but LogLoss does.
+
+c. Logistic regression fares better than linear regression does. It's LogLoss vs. Periods curve is much smoother.
+The LogLoss value is slightly higher than L2 Loss, but overall a better model.
+
+d. I got an ACU of 0.78, and an Accuracy of 0.77 with hyperparameter values learning_rate=0.000005, steps=2000,
+and batch_size=400.
+
