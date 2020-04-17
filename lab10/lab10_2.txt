@@ -1,0 +1,29 @@
+For lab10 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 17, 2020
+
+Exercise 10.2:
+
+a.
+Adagrad is an optimizer that changes the learning rate for each coefficient in a model, which lowers the overall
+learning rate. This works really well for convex learning problems.
+
+b.
+Task 1:
+With (learning_rate=0.0007),
+    steps=5000,
+    batch_size=70,
+    hidden_units=[10, 10], I got a RMSE of 90.13 on the training data.
+
+Task 2:
+Using Adagrad and a (learning_rate=0.5),
+    steps=1000,
+    batch_size=50,
+    hidden_units=[10, 10], I got a RMSE of 66.14 on the training data.
+This was better than the Adam optimizer, which with the same hyperparamaters got a RMSE of 70.05
+
+Task 3:
+With (learning_rate=0.07),
+    steps=5000,
+    batch_size=70,
+    hidden_units=[10, 10], I got a RMSE of 74.33 on the training data.

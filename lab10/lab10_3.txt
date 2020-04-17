@@ -1,0 +1,26 @@
+For lab10 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 17, 2020
+
+Exercise 10.3:
+
+a.
+It shows which classes were misclassified as other classes. In this specific example, it shows which numbers were
+incorrectly labeled as different numbers. The given confusion matrix after Task 1 is actually pretty good,
+with sometimes 4's getting classified as 9's, and 5's getting classified as 3's. However these don't happen extremely
+frequently, as the accuracy was 0.90.
+
+b.
+The TensorFlow architect is pretty different from Keras. With tensor flow we have to provide arguments to the
+function to build the model: how many hidden layers do we want, what're feature columns, etc. With Keras we simply
+created a model, and then added layers as we pleased. It seemed a lot more simple. With TensorFlow we also always
+have to provide input functions that contain the data, but with Keras we just give it the data as is.
+
+I got an accuracy of 0.91 on the test set.
+
+c.
+There's a big difference between the visualization at 10 steps and 1000 steps. At 10 steps the visualizations are all
+just super grainy, with really now distinguishing features between them. There's no information to be gleamed from them.
+However with 1000 steps one can start to make out different shapes between the visualizations. It's still not
+crystal clear, however there are clear differences and beginnings of shapes across the visualizations, as opposed to
+constant grain at 10 steps.

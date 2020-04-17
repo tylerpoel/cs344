@@ -1,0 +1,21 @@
+For lab10 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 17, 2020
+
+Exercise 10.4:
+
+a.
+i.
+Both data sets contain 1000 images, with each image being 150x150 pixels.
+
+ii.
+The CNN presented here is similar to the one we did in class. Both have 3 convolutional layers with relu activation
+functions. However in class we used 32, 32, and 64 filters respectively for our 3 layers, but in this example they use
+16, 32, and finally 64 for their 3 layers. Both our class CNN and this example CNN flatten the image before output.
+
+iii.
+As the image is processed more and more a lot of distinguishing features are lost. There are much less clear images
+of the animal. This is to be expected though.
+
+The max-pooling step still does a good job of sending along the relevant information, which is a bit surprising, as it
+simply sends the highest value.

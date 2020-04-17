@@ -1,0 +1,14 @@
+For lab10 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 17, 2020
+
+Exercise 10.1:
+
+a. I would rather use Keras than TensorFlow. The Keras syntax and set-up is just a lot simpler and easy to understand
+in my opinion. TensorFlow seems like it has so much going on, with a lot of different things the programmer has to do,
+while Keras can do the same problem much more simply.
+
+b.
+Task 1 & 2:
+With  learning_rate=0.001, steps=2000, batch_size=110, and hidden_units=[10, 10] I got a RMSE of 105.03 on the
+final test data.
