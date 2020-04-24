@@ -1,0 +1,26 @@
+For lab11 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: April 24, 2020
+
+Exercise 11.1:
+
+a. Task 1:
+I think in some instances a linear model is preferable. Perhaps if the problem is very obviously linear, and a neural
+network would seem like overkill, the linear model would be good to use. Linear models are also much quicker to train,
+which can be very useful in some circumstances.
+
+b. Task 2:
+The neural network does better than the linear model, but not by a significant amount. The NN gets 0.8 accuracy
+on the training data compared to the linear models 0.78 accuracy. These improvements are similar for the test data.
+
+c. Task 3:
+The embeddings don't seem to offer much of an improvement, as the accuracy on the training data was 0.79.
+
+d. Tasks 4-5:
+A lot of negative words are in the region in the bottom left. Specifically, the two words "unfortunately" and
+"disappointing" are right on top of each other. This makes sense, as they carry very similar connotations.
+
+e. Task 6:
+In my feature column I used all 30,716 terms from the vocabulary file. I also changed the hidden_units argument to
+[20, 20]. Finally, I trained the model using 3,000 steps. In the end my best performance was 87% accuracy on the
+training data, with 84% accuracy on the test data.
