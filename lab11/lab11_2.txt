@@ -4,4 +4,20 @@ Date: April 24, 2020
 
 Exercise 11.2:
 
-a. Task 1:
+a. Task #1:
+    capital_gain and capital_loss both have almost all values of zero. This seems odd. A lot of the data also
+    seems to be right-skewed, such as workclass, marital_status, occupation, and race. Perhaps this is expected,
+    however there's also a strong difference between the number of males and females. The number of males is
+    almost double that of females, when we'd expect them to be around the same.
+
+b. Task #2:
+    I binned race, with the color being income_bracket. While white is the race represented the most in the dataset,
+    the proportions of other races between <50k and >50k were all mostly similar. White however looks like it has
+    a slightly higher proportion of people with an income of >50k.
+
+d. Task #4:
+    The accuracy and AUC for the black subcategory is relatively high, however the recall
+    for the Black subcategory is really poor compared to the other subcategories. In the Black subcategory there are
+    more false negatives than true positives, meaning that our model isn't doing a good job of recognizing an income
+    level <50k. However this seems to be only for the Black subcategory. Perhaps our model has biases or is skewed
+    against the Black subcategory.
