@@ -4,13 +4,13 @@ April 29, 2020
 
 Project Proposal - draft:
 
-I'm interested in further exploring text generation using neural networks, specifically a LSTM. I would feed the
+I'm interested in exploring text generation using neural networks, specifically a LSTM. I would feed the
 network in a large text file, and based off of how I train it I'm interested in what type of text generation I'd
 receive. I'll be referencing and adapting from the Chollet work book on github, specifically
 8.1-text-generation-with-lstm.ipynb.
 
 In this example the text fed into the network are the writings of a German philosopher. I'd like to adapt this
 model to feed it in the script for one of my favorite movies: Star Wars. Currently there are two different types
-of scripts I'm considering using: one that contains just the dialogue and the names of the characters that say the
-specific line, and the other being one that contains both the dialogue and paragraphs that introduce the scene,
-describe the setting, etc.
+of scripts I'm considering using: one that contains simply just the dialogue and the names of the characters that say
+the specific line, and the other being one that contains both the dialogue and paragraphs that introduce the scene,
+describe the setting, etc. Training on either of these scripts could yield different and interesting results.
