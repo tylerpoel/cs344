@@ -1,0 +1,26 @@
+For lab13 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: May 8, 2020
+
+Exercise 13.2
+
+Facts:
+isOn(A, B)
+isOn(B, C)
+supports(table, C)
+E x, y supports(X, Y) > isOn(Y, X)
+E x, y isOn(X, Y) > isAbove(X, Y)
+E x, y, z isAbove(X, Y) ^ isAbove(Y, Z) > isAbove(X, Z)
+
+
+Prove A is above the table:
+
+given supports(table, C), therefore isOn(C, table).
+
+isOn(A, B) ^ isOn(B, C) ^ isOn(C, table) >
+    isAbove(A, B) ^ isAbove(B, C) ^ isAbove(C, table).
+
+From E x, y, z isAbove(X, Y) ^ isAbove(Y, Z) > isAbove(X, Z):
+    isAbove(A, B) ^ isAbove(B, C) > isAbove(A, C).
+
+    isAbove(A, C) ^ isAbove(C, table) > isAbove(A, table).
