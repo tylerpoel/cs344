@@ -1,0 +1,18 @@
+Homework05 in CS 344 at Calvin University
+Student: Tyler Poel
+Date: May 11, 2020
+
+Exercise 1:
+Answering question 7.2 from the book.
+
+Is the unicorn mythical?
+
+Rules:
+mythical -> immortal
+not mythical -> mortal mammal
+immortal -> horned
+mammal -> horned
+horned -> magical
+
+
+
