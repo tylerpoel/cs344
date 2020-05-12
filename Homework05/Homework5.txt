@@ -5,14 +5,32 @@ Date: May 11, 2020
 Exercise 1:
 Answering question 7.2 from the book.
 
-Is the unicorn mythical?
-
 Rules:
 mythical -> immortal
 not mythical -> mortal mammal
 immortal -> horned
 mammal -> horned
 horned -> magical
+
+Is the unicorn mythical?
+    There's no way to prove the unicorn is mythical. To be mythical it must be immortal, or to be not mythical
+    it must be a mortal mammal, however there's no way to prove if the unicorn is immortal or mortal, leaving
+    the question unable to be answered.
+
+Is the unicorn magical?
+    Yes, the unicorn is magical, because it's horned. A rule explicitly gives this.
+
+Is the unicorn horned?
+    The unicorn is definitely horned. A unicorn can be either an immortal creature, or a mortal mammal.
+    Whether or not it's immortal or a mammal, it will have horns. Therefore the unicorn must be horned, as
+    the rules don't allow for a different possibility.
+
+
+I don't think this would be too hard to implement in Prolog. The rules don't seem too complex, and I think
+could easily be implemented in Prolog's syntax.
+
+
+
 
 
 
