@@ -14,8 +14,6 @@ In this repo:
 draft.txt, proposal.ipynb, and updates.ipynb are all earlier submission steps for this project. Most of what they 
 contain can be seen in the final submission.
 
-
-
 SW_model.ipynb - a Jupyter notebook containing the LSTM newtork used,
 along with code for reading in and preparing the Star Wars text.
 
