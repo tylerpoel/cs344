@@ -1,7 +1,6 @@
 Computer Generated Star Wars Script.
-For the final project in CS344 at Calvin University.
-Tyler Poel
-May 20, 2020
+
+For the final project in CS344 at Calvin University. Tyler Poel, May 20, 2020
 
 This project goal is to create a LSTM network that, when fed
 a text file, will generate new text, based off of the text
@@ -12,6 +11,9 @@ the model gave back would read. For comparative purposes, I also ran the
 model on the text "Little Women", by Louisa May Alcott.
 
 In this repo:
+draft.txt and proposal.ipynb are both earlier submission steps for this project. Most of what they contain can be seen
+in the final submission.
+
 SW_model.ipynb - a Jupyter notebook containing the LSTM newtork used,
 along with code for reading in and preparing the Star Wars text.
 
