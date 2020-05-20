@@ -1,8 +1,6 @@
 Computer Generated Star Wars Script.
 
-For the final project in CS344 at Calvin University.
-Tyler Poel
-May 20, 2020
+For the final project in CS344 at Calvin University. Tyler Poel, May 20, 2020
 
 This project goal is to create a LSTM network that, when fed
 a text file, will generate new text, based off of the text
